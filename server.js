@@ -12,8 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Rutas
-app.use('/auth', authRoutes);
-
+app.use('/chats', chatRoutes);
 // Health check
 app.get('/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
