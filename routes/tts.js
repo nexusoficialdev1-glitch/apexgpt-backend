@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const router = express.Router();
 
-// Middleware de auth (mismo que chats)
+// Middleware de auth (mismo que chats) 
 function authMiddleware(req, res, next) {
     const authHeader = req.headers.authorization;
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
