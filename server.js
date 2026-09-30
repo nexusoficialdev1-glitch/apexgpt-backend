@@ -3,16 +3,19 @@ const cors = require('cors');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
+const chatRoutes = require('./routes/chats');
 
 const app = express();
 const port = process.env.PORT || 4000;
 
 // Middlewares
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
 
 // Rutas
+app.use('/auth', authRoutes);
 app.use('/chats', chatRoutes);
+
 // Health check
 app.get('/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
