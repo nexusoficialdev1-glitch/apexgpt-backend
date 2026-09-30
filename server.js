@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
 const chatRoutes = require('./routes/chats');
+const ttsRoutes = require('./routes/tts');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -15,6 +16,7 @@ app.use(express.json({ limit: '10mb' }));
 // Rutas
 app.use('/auth', authRoutes);
 app.use('/chats', chatRoutes);
+app.use('/tts', ttsRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
