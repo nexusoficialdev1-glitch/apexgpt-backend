@@ -4,9 +4,10 @@
   "main": "server.js",
   "scripts": {
     "start": "prisma migrate deploy && node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "postinstall": "prisma generate"
   },
-"dependencies": {
+  "dependencies": {
     "@prisma/client": "^5.22.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -14,7 +15,8 @@
     "google-auth-library": "^9.11.0",
     "jsonwebtoken": "^9.0.2",
     "prisma": "^5.22.0"
-},
-"devDependencies": {
+  },
+  "devDependencies": {
     "nodemon": "^3.1.0"
+  }
 }
